@@ -688,7 +688,7 @@ h6 {
   transition: 0.3;
   background: #f6f9ff;
   padding: 10px 15px;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 
 .sidebar-nav .nav-link i {
@@ -745,7 +745,7 @@ h6 {
   font-size: 6px;
   margin-right: 8px;
   line-height: 0;
-  border-radius: 50%;
+  border-radius: 0%;
 }
 
 .sidebar-nav .nav-content a:hover,
@@ -1239,8 +1239,50 @@ h6 {
 .card {
   border: 0px !important;
   background: #fff !important;
+  /* box-shadow: none !important; */
 }
 
-table {
+.table, tr, thead{
   background-color: white !important;
 }
+
+/* spinner */
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  padding: 1.1px;
+  background: conic-gradient(#0000 10%,#474bff) content-box;
+  -webkit-mask: repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+       radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 calc(100% - 9px));
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: spinner-d55elj 1s infinite steps(10);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+ }
+}
+
+
+.circle-sm {
+  width: 30px ;
+  height: 30px;
+  margin-right: 10px;
+}
+
